@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <title>Hello, world!</title>
+
+    <style>
+        .smallimage {
+            width: 50%;
+            display: inline-block;
+        }
+        .question {
+            display: flex;
+            height: 50vh;
+            justify-content: space-around;
+            align-items: center;
+            background: #b2bec3;
+            flex-direction: column;
+            padding-left: 10%;
+            padding-right: 10%;
+            
+        }
+        
+        .answer {
+            display: flex;
+            height: 40vh;
+            justify-content: space-around;
+            align-items: center;
+            background: white;
+    overflow: scroll;
+            padding: 10%;
+        }
+        
+        .button {
+            display: flex;
+            height: 10vh;
+            justify-content: space-around;
+            align-items: center;
+            background: #0984e3;
+        }
+        
+        .button div {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 50%;
+            height: 100%;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="question">
+
+        <div style="padding: 10px; height: 60%">
+            <p id="qs"></p>
+        </div>
+        <div style="height: 70%">
+            <p id="questiontxt"></p>
+        </div>
+    </div>
+
+    <div class="answer">
+            <p id="answertxt"></p>
+    </div>
+
+    <div class="button">
+
+        <div id="showAns">
+            Show Answer
+        </div>
+
+
+        <div id="random">
+            random one
+        </div>
+
+    </div>
+    <script>
+        
+    var curRandom = 0;
+        
+        document.getElementById("showAns").onclick = function() {
+            showAns()
+        };
+        
+        function showAns() {
+        x = myObj.Answer[curRandom-1];
+        document.getElementById("answertxt").innerHTML = x;
+        }
+        
+        document.getElementById("random").onclick = function() {
+            random()
+        };
+
+        function random() {
+            curRandom = Math.floor((Math.random() * maxNum) + 1);
+            document.getElementById("qs").innerHTML = curRandom;
+        x = myObj.Question[curRandom-1];
+        document.getElementById("questiontxt").innerHTML = x;
+        document.getElementById("answertxt").innerHTML = '';
+        }
+
+        var maxNum = 55;
+
+        var myObj, x;
+        myObj = {
+            "Question": ["1. Is sand casting permanent casting?",
+    "2. What is green sand used for and what color is it?",
+    "3. In sand casting, what is the purpose of the riser? Is it scrap metal?",
+    "4. What is the material of the mold in die casting?",
+    "5. Is investment casting a permanent casting?",
+    "6. What shape of product is centrifugal casting used for?",
+    "7. What is continuous casting and what is the shape of the metal?",
+    "8. What is the minimum thickness of the material if one wants to use sand casting?",
+    "9. Can the wall of sand cast be perfectly vertical?",
+    "10. Define residual stress. Is there more residual stress in cold or hot working? Why?",
+    "11. Is this design for a mold?<br><img class='smallimage' src='pic/11.png'>",
+    "12. What does wrought metal mean?",
+    "13. What process do we have to utilize to release the residual stress?",
+    "14. Define forging and how many types are there.",
+    "15. Define extrusion and how many types are there.",
+    "16. Sketch the bend process. What is the use of the bend in draw process?",
+    "17. Can rolling be considered a continuous casting?",
+    "18. Is this direct extrusion?<br><img class='smallimage' src='pic/18.png'>",
+    "19.",
+    "20. What process is this?<br><img class='smallimage' src='pic/20.png'>",
+    "21. The distance between the fixed blade and the punch is called:",
+    "22.What is the percent range of break clearance with respect to the thickness of the sheet metal?",
+    "23. In the process of shear cutting, shear fracture and shear deformation occur. Which occurs first and which occurs second and why?",
+    "24. What is the relationship between shear strength and yield strength based on Mohr’s Circle and Maximum shear failure theory? ",
+    "25. What is the difference between strength and stiffness? ",
+    "26. In bending of sheet metal, does the cross section of the material at the bending point reduce or increase? Why? ",
+    "27. Is the reduction of the cross section proportional or inversely proportional to the ratio of radius/thickness (r/t)?",
+    "28. What is spring back?",
+    "29. The process that a punch pushes the sheet metal into the cavity of a die is Deep drawing:",
+    "30. Prove that the minimum initial blank size of this hemisphere bowl is A. ",
+    "31. What is the name of this process?<br><img class='smallimage' src='pic/31.png'>",
+    "32. This process is called:<br><img class='smallimage' src='pic/32.png'>",
+    "33. What is the name of this process?<br><img class='smallimage' src='pic/33.png'>",
+    "34. This process is:<br><img class='smallimage' src='pic/34.png'>",
+    "35. Name three or more types of electric arc welding.",
+    "36. Name two types of electrical resistance welding.",
+    "37. In arc welding, what is the purpose of flux and gas? ",
+    "38. Does TIG and MIG create slag on the welded surface? ",
+    "39. What is the heated affected zone (HAZ)? ",
+    "40. In spot welding, why is the weld at the interface of the two metals and not at the point where the two electrodes are contacting the sheet metal? ",
+    "41. How do they make tubes by welding? ",
+    "42. How does friction welding works? ",
+    "43. What is this welding called called?<br><img class='smallimage' src='pic/43.png'>",
+    "44. What type of welding uses horizontal or vertical oscillating friction above the sound frequency?",
+    "45.  Does the base metal melts in brazing? How does brazing join two materials?",
+    "46. Can we use brazing for ferrous materials? ",
+    "47.  Name three or more methods of surface cleaning? ",
+    "48. How does ultrasonic cleaning work?",
+    "49. Is this electropolishing?<br><img class='smallimage' src='pic/49.png'>",
+    "50. What is the process shown?<br><img class='smallimage' src='pic/50.png'>",
+    "51. How does electroplating work? ",
+    "52. Electropolishing ",
+    "53. What is the symbol of surface roughness? ",
+    "54. How does vapor-deposited metal coating work? ",
+    "55. Is soldering a form of brazing?",
+                         
+            ],
+            "Answer": ["No. It is temporary casting",
+                "Green sand is actually black and is used for sand casting.",
+                "When metal is poured through the runner, it will eventually come out through the riser. The purpose of the riser is to give an indication that the molten metal has flown through all the cavities of cast. Once the casted part has hardened, the riser is cut off; therefore its scrap metal.",
+    "Steel. A die is a mold made from metal. Occasionally it is also made from graphite (see bottom of pg. 25)",
+    "No. Investment casting is a temporary casting.",
+    "Centrifugal casting is used for cylindrical shapes.",
+    "Continuous casting is the process whereby molten steel is solidified into a billet, bloom, or slab for subsequent rolling in the finishing mills. Metal is passed through a reservoir called tundish where it sits for some time to collect slag. Metal then flows continuously thru a mold called a strand which is water cooled at the walls and has no bottom. The metal flows out with a continuous length and an outside surface that has hardened just enough to retain its shape. A secondary cooling stage consists of spraying the casted part with water so that the metal solidifies throughout the entire cross section. The part then goes through a set of guide and straightening rolls and is later cut to desired lengths.",
+    "The minimum thickness is 3mm.",
+    "No, the walls should contain a taper of 1-3 degrees for ease of removal of pattern from mold.",
+    "Residual stress is stress that is left over once the external cause (ex. force) has been removed. There is more residual stress left over from cold working than hot working because cold working requires a greater force. Also because hot working is done above the recrystallization temperature.",
+    "Reentrant shape should be avoided, can be easily altered by changing the shape of the cast part.",
+    "Wrought metal is a metal that has been previously subjected to work.",
+    "Recrystallization Annealing",
+    "Deformation of a metal into a desired shape by exerting a compressive force (kinetic) or pressure. The 5 types are <br>hammer, <br> closed die drop forging, <br> closed die pressure forging, <br>upset forging, and <br>rolling forging. (5 types)",
+    "Extrusion is the process of pushing a ductile slug/billet through a form (ex. a hole) in a steel die. The different types are direct, indirect, and impact extrusion. (3 types)",
+    "To make pots",
+    "Yes",
+    "No",
+    " ",
+    "Fixed and floating plug tube drawing",
+    "Break clearance",
+    "(2%) x (thickness) for ductile material (ex. AL) and (10%)x(thickness) for medium carbon steel. ",
+    "Deformation occurs first followed by fracture. Linear plastic deformation->fracture. ",
+    "Shear strength = (0.5 to 0.75) x Yield strength",
+    "Strength is the amount of stress an object can receive before it breaks (the max) Stiffness is the resistance of an elastic body to deflection or deformation by an applied load (the slope)",
+    "The cross section reduces with a tight bend since the thickness decreases. Radius of bend is inversely proportional to the thickness of the material.",
+    "Inversely prop. For r/t=1, reduction=25%. For r/t=4, reduction=10%. ",
+    "When a metal is stretched beyond its elastic limit and the load is removed, the metal releases energy that it absorbed during bending. As a result, when the load is removed, the metal springs back a little bit. (1-2 degrees)",
+    "True",
+    "Surface Area (SA) = SA (hemisphere) + SA (Circular Lip) (Pi*D^2)/4 = (Pi*d1^2)/2 + Pi*(d2^2 – d1^2))/4 ~~ Solve for D Initial blank size greater than sqrt(d1^2+d2^2)",
+    "Draw bead",
+    "Rubber forming",
+    "Spinning Process",
+    "Explosive forming",
+    "Flux shielding, Gas shielding (TIG and MIG), Plasma arc, Laser beam, Electron beam, and Oxy-fuel gas",
+    "Spot welding and Seam welding",
+    "To protect the welding from atmospheric contamination and create a secondary air exclusion barrier until solidification occurs. It prevents re-solidification of molten metal in air.to protect the molten metal from oxidation",
+    "NO ",
+    "The area surrounding the region of the weld whose microstructure has been affected by the heat generated by the welding operation. ",
+    "HIGHEST RESISTANCE AT THE INTERFACE. Spot welding occurs due to the resistance in between the plates. The resistance of the metal to the electric current flow causes localized heating at the joint surfaces and the weld is made. ",
+    "Continuous seam welding is done on sheet metal",
+    "One half of the weld is held stationary while the other joint rotates as is pushed producing friction which melts the metal and welds. ",
+    "Friction stir welding ",
+    "Ultrasonic Welding 200kHz",
+    "NO. Molten filler metal flows between the two heated but un-melted surfaces. ",
+    "Yes (top of pg. 126 says you can, but it is usually used for non-ferrous metals)",
+    "Wire brushing, Tumbling, Barrel and Vibratory Finishing, and Jet blast cleaning.",
+    "Subject is immersed in water that is subjected to high frequency (25-40 kHz) ultrasonic wave energy. Intense cavitations are generated within the fluid (0.15mm diameter). Bubbles reach the part and collapse creating wave of 250 mph and this takes away contamination or dirt from the surface.",
+    "No it is electro plating",
+    "Electrostatic powder spray gun",
+    "Component is wired into a DC circuit as a cathode (-) with the metal used as the plating source as the anode (+). Both immerged into a bath of electrolyte containing salts of the metal to be plated. Once on, the current flows, metals from the anode are deposited in the cathode. ",
+    "Opposite of electroplating, polarities are changed and the layer is stripped off. ",
+    "✓",
+    "The workpiece and the coating metal are placed in a vacuum chamber and the coating metal is heated to evaporation. The condensation on the cold part creates the coating.",
+    "yes",
+            ]
+        };
+        curRandom = Math.floor((Math.random() * maxNum) + 1);
+        x = myObj.Question[curRandom-1];
+        document.getElementById("qs").innerHTML = curRandom;
+        document.getElementById("questiontxt").innerHTML = x;
+    </script>
+</body>
+
+</html>
